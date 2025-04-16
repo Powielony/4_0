@@ -17,8 +17,11 @@ class Main {
       Scanner in = new Scanner(System.in);
 
       int wybor;
+      String name;
+      int age;
 
       while (true) {
+        System.out.println();
         System.out.println("Proszę wybrać opcję");
         System.out.println("1. Dodaj studenta");
         System.out.println("2. Wypisz zapisanych studentów");
@@ -30,6 +33,10 @@ class Main {
 
         switch (wybor) {
           case 1:
+            System.out.print("Podać imię studenta: ");
+            name = in.next();
+            System.out.print("Podać wiek studenta: ");
+            age = in.nextInt();
             s.addStudent(new Student(name, age));
             break;
           case 2:
