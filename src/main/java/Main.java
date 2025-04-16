@@ -18,6 +18,7 @@ class Main {
 
       int wybor;
       String name;
+      String surname;
       int age;
 
       while (true) {
@@ -35,9 +36,11 @@ class Main {
           case 1:
             System.out.print("Podać imię studenta: ");
             name = in.next();
+            System.out.print("Podać nazwisko studenta: ");
+            surname = in.next();
             System.out.print("Podać wiek studenta: ");
             age = in.nextInt();
-            s.addStudent(new Student(name, age));
+            s.addStudent(new Student(name, surname, age));
             break;
           case 2:
             var students = s.getStudents();
