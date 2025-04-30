@@ -24,6 +24,7 @@ class Main {
       int bdm;
       int bdd;
       String bd;
+      var students = s.getStudents();
 
       while (true) {
         System.out.println();
@@ -73,13 +74,20 @@ class Main {
             s.addStudent(new Student(name, surname, age, bd));
             break;
           case 2:
-            var students = s.getStudents();
+            students = s.getStudents();
             for (Student current : students) {
               System.out.println(current.ToString());
             }
             break;
           case 3:
-            System.out.println("Not implemented yet!");
+            System.out.print("Podać imię studenta do wyszukania: ");
+            name = in.next();
+            students = s.getStudents();
+            for (Student current : students) {
+              if (current.GetName().equals(name)) {
+                System.out.println(current.ToString());
+              }
+            }
             break;
           case 0:
             System.exit(0);
