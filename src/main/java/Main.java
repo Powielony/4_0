@@ -20,6 +20,10 @@ class Main {
       String name;
       String surname;
       int age;
+      int bdy;
+      int bdm;
+      int bdd;
+      String bd;
 
       while (true) {
         System.out.println();
@@ -40,7 +44,33 @@ class Main {
             surname = in.next();
             System.out.print("Podać wiek studenta: ");
             age = in.nextInt();
-            s.addStudent(new Student(name, surname, age));
+            while (true) {
+              System.out.print("Podać rok urodzenia studenta: ");
+              bdy = in.nextInt();
+              if (bdy <= 3000 && bdy >= 1) {
+                break;
+              }
+              System.out.println("Niewłaściwy rok urodzenia!");
+            }
+            while (true) {
+              System.out.print("Podać miesiąc urodzenia studenta: ");
+              bdm = in.nextInt();
+              if (bdm <= 12 && bdm >= 1) {
+                break;
+              }
+              System.out.println("Niewłaściwy miesiąc urodzenia!");
+            }
+            while (true) {
+              System.out.print("Podać dzień urodzenia studenta: ");
+              bdd = in.nextInt();
+              if (bdd <= 31 && bdd >= 1) {
+                break;
+              }
+              System.out.println("Niewłaściwy dzień urodzenia!");
+            }
+            bd = Integer.toString(bdy) + "." + Integer.toString(bdm) + "." + Integer.toString(bdd);
+
+            s.addStudent(new Student(name, surname, age, bd));
             break;
           case 2:
             var students = s.getStudents();
